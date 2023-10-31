@@ -1,0 +1,85 @@
+:root {
+    /*  ### Primary */
+
+    --Light-red-CTA: hsl(356, 100%, 66%);
+    --Very-light-red-CTA-hover-background: hsl(355, 100%, 74%);
+    --Very-dark-blue-headings: hsl(208, 49%, 24%);
+
+    /* ### Neutral */
+
+    --White-text: hsl(0, 0%, 100%);
+    --Grayish-blue-footer-text: hsl(240, 2%, 79%);
+    --Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+    --Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+
+    /* ### Gradient */
+
+    /* Background gradient - Intro/CTA mobile nav: */
+
+    --Very-light-red: hsl(13, 100%, 72%);
+    --Light-red: hsl(353, 100%, 62%);
+
+    /* Background gradient - body: */
+
+    --Very-dark-gray-blue: hsl(237, 17%, 21%);
+    --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        /* font-family: 'Overpass', sans-serif; */
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+    }
+
+    .wrapper {
+        max-width: 1153px;
+    }
+
+    .bg {
+        background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+
+    }
+
+
+    .btn1 {
+        background: white;
+        color: var(--Light-red);
+        padding: 0.7rem 2.45rem;
+    }
+
+    .btn2 {
+        background: white;
+        color: var(--Light-red);
+        padding: 0.7rem 1rem;
+    }
+
+    .btn3 {
+        background: transparent;
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border: 1px solid white;
+    }
+
+
+    .btn1:hover {
+        background: var(--Very-light-red-CTA-hover-background);
+        color: white;
+    }
+
+    .btn2:hover {
+        background: var(--Very-light-red-CTA-hover-background);
+        color: white;
+    }
+
+    .btn3:hover {
+        background: white;
+        color: var(--Very-light-red-CTA-hover-background);
+    }
+
+  
+}
