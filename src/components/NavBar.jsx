@@ -11,6 +11,8 @@ import {
   RiNewspaperFill,
   RiLinkedinBoxFill,
 } from "react-icons/ri";
+import { motion } from "framer-motion";
+
 import { useAppContext } from "../context/Context";
 const NavBar = () => {
   const {
@@ -24,9 +26,20 @@ const NavBar = () => {
     closeMenu,
     menuMobileOpen,
   } = useAppContext();
+
+  const variants = (delay) => ({
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { delay: delay, duration: 0.5 } },
+  });
   return (
     <>
-      <nav className="flex items-center w-full justify-between mt-[3.8rem] z-40 px-[20px]">
+      <motion.nav
+        className="flex items-center w-full justify-between mt-[3.8rem] z-40 px-[20px]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={variants(0.5)}
+      >
         <div className="flex items-center gap-[4rem]">
           <img src={logo} alt="blogr" className="lg:w-[101px] w-[83px]" />
 
@@ -172,7 +185,7 @@ const NavBar = () => {
             />
           )}
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 };
