@@ -4,20 +4,19 @@ import BgMobile from "../components/BgMobile";
 import { NavBar, Button } from "../components/index";
 import { useAppContext } from "../context/Context";
 
-import {
-  RiLayoutMasonryLine,
-  RiBookmark3Fill,
-  RiMoneyDollarCircleLine,
-  RiGlobalLine,
-  RiPsychotherapyLine,
-  RiNurseLine,
-  RiContactsLine,
-  RiNewspaperFill,
-  RiLinkedinBoxFill,
-} from "react-icons/ri";
+import { arrowDark } from "../images/images";
 
 const Header = () => {
-  const { menuMobileOpen } = useAppContext();
+  const {
+    menuMobileOpen,
+    productMobile,
+    productMobileMenu,
+    companyMobile,
+    companyMobileMenu,
+    connectMobileMenu,
+    connectMobile,
+  } = useAppContext();
+
   return (
     <div className="relative">
       <header className=" flex overflow-hidden items-center flex-col min-h-[37.5rem] relative z-50 rounded-bl-[6.5rem] bg">
@@ -44,11 +43,99 @@ const Header = () => {
       </header>
       {/* ****** MENU MOBILE *******/}
       <div
-        className={`absolute bg-white text-black w-[250px] h-[600px] top-[6rem] right-6 z-50 shadow-2xl lg:hidden block ${
+        className={`absolute bg-white text-black w-[90%] transform left-1/2 right-1/2 -translate-x-1/2  min-h-[340px] top-[8.2rem] z-50 shadow-2xl lg:hidden block rounded-md  ${
           menuMobileOpen ? "" : "hidden"
         } `}
       >
-        soy mennu mobile
+        <div className="flex flex-col items-center gap-[1.3rem] text-gray-700 justify-center  m-5 rounded-md">
+          {/* PRODUCT */}
+          <div className="mx-5 w-full mt-3  ">
+            <div
+              className="flex items-center justify-center gap-2"
+              onClick={productMobileMenu}
+            >
+              <span className="text-[18px] font-semibold">Product</span>
+              <img
+                src={arrowDark}
+                alt="arrow "
+                className={` ${
+                  productMobile ? "rotate-180 transform duration-150" : ""
+                }`}
+              />
+            </div>
+
+            <ul
+              className={`mt-3 flex flex-col p-[1.3rem] justify-between  text-center text-[16px] font-semibold bg-[#EFEFF1] w-full rounded-md h-[150px] ${
+                productMobile ? "" : "hidden"
+              } `}
+            >
+              <li className="">Catalogue</li>
+              <li className="">Strategy</li>
+              <li className="">Business</li>
+            </ul>
+          </div>
+
+          {/* COMPANY */}
+          <div className="mx-5 w-full  ">
+            <div
+              className="flex items-center justify-center gap-2"
+              onClick={companyMobileMenu}
+            >
+              <span className="text-[18px] font-semibold">Company</span>
+              <img
+                src={arrowDark}
+                alt="arrow "
+                className={` ${
+                  companyMobile ? "rotate-180 transform duration-150" : ""
+                }`}
+              />
+            </div>
+
+            <ul
+              className={`mt-3 flex flex-col p-[1.3rem] justify-between  text-center text-[16px] font-semibold bg-[#EFEFF1] w-full rounded-md h-[150px] ${
+                companyMobile ? "" : "hidden"
+              } `}
+            >
+              <li className="">Services</li>
+              <li className="">Personal</li>
+              <li className="">Users</li>
+            </ul>
+          </div>
+
+          {/* CONNECT */}
+          <div className="mx-5 w-full  ">
+            <div
+              className="flex items-center justify-center gap-2"
+              onClick={connectMobileMenu}
+            >
+              <span className="text-[18px] font-semibold">Connect</span>
+              <img
+                src={arrowDark}
+                alt="arrow "
+                className={` ${
+                  connectMobile ? "rotate-180 transform duration-150" : ""
+                }`}
+              />
+            </div>
+
+            <ul
+              className={`mt-3 flex flex-col p-[1.3rem] justify-between  text-center text-[16px] font-semibold bg-[#EFEFF1] w-full rounded-md h-[150px] ${
+                connectMobile ? "" : "hidden"
+              } `}
+            >
+              <li className="">Contact</li>
+              <li className="">Newsletter</li>
+              <li className="">Linkedin</li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-[1.2rem] ">
+            <button className="text-black pt-5 text-[18px] font-medium ">
+              Login
+            </button>
+            <Button btn="btn4 bg" text="Sign Up" />
+          </div>
+        </div>
       </div>
     </div>
   );

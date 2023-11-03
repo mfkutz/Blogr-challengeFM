@@ -1,6 +1,5 @@
-import { logo, arrowLight, hamburguer } from "../images/images";
+import { logo, arrowLight, hamburguer, close } from "../images/images";
 import { Button } from "../components/index";
-import { useState } from "react";
 import {
   RiLayoutMasonryLine,
   RiBookmark3Fill,
@@ -14,32 +13,17 @@ import {
 } from "react-icons/ri";
 import { useAppContext } from "../context/Context";
 const NavBar = () => {
-  const { handleMenuMobileToggle } = useAppContext();
-  const [product, setProduct] = useState(false);
-  const [company, setCompany] = useState(false);
-  const [connect, setConnect] = useState(false);
-
-  function handleMenu1() {
-    setProduct(true);
-    setCompany(false);
-    setConnect(false);
-  }
-  function handleMenu2() {
-    setCompany(true);
-    setProduct(false);
-    setConnect(false);
-  }
-  function handleMenu3() {
-    setConnect(true);
-    setCompany(false);
-    setProduct(false);
-  }
-  function closeMenu() {
-    setProduct(false);
-    setCompany(false);
-    setConnect(false);
-  }
-
+  const {
+    handleMenuMobileToggle,
+    product,
+    company,
+    connect,
+    handleMenu1,
+    handleMenu2,
+    handleMenu3,
+    closeMenu,
+    menuMobileOpen,
+  } = useAppContext();
   return (
     <>
       <nav className="flex items-center w-full justify-between mt-[3.8rem] z-40 px-[20px]">
@@ -172,12 +156,21 @@ const NavBar = () => {
 
         {/* ********************* MOBILE MENU ************ */}
         <div className="lg:hidden">
-          <img
-            src={hamburguer}
-            alt="hamburguer menu"
-            className="cursor-pointer"
-            onClick={handleMenuMobileToggle}
-          />
+          {menuMobileOpen ? (
+            <img
+              src={close}
+              alt="close icon"
+              className="cursor-pointer"
+              onClick={handleMenuMobileToggle}
+            />
+          ) : (
+            <img
+              src={hamburguer}
+              alt="hamburguer menu"
+              className="cursor-pointer"
+              onClick={handleMenuMobileToggle}
+            />
+          )}
         </div>
       </nav>
     </>

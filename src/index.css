@@ -65,6 +65,10 @@
         border: 1px solid white;
     }
 
+    .btn4{
+        padding: 0.7rem 2.45rem;
+        color: white;
+    }
 
     .btn1:hover {
         background: var(--Very-light-red-CTA-hover-background);
