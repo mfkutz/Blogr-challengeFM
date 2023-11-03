@@ -21,9 +21,9 @@ const MobileBar = () => {
 
   return (
     <div
-      className={`absolute bg-white text-black w-[90%] transform left-1/2 right-1/2 -translate-x-1/2  min-h-[340px] top-[8.2rem] z-50 shadow-2xl lg:hidden block rounded-md  ${
-        menuMobileOpen ? "" : "hidden"
-      } `}
+      className={`absolute bg-white text-black w-[90%] left-1/2 -translate-x-1/2 min-h-[340px] top-[8.2rem] lg:hidden block rounded-md transform transition-transform duration-500 z-50 shadow-2xl ${
+        menuMobileOpen ? "translate-y-0" : "translate-y-[-140%]"
+      }`}
     >
       <div className="flex flex-col items-center gap-[1.3rem] text-gray-700 justify-center  m-5 rounded-md">
         {/* PRODUCT */}
