@@ -32,7 +32,7 @@ const MobileBar = () => {
             className="flex items-center justify-center gap-2"
             onClick={productMobileMenu}
           >
-            <span className="text-[18px] font-semibold">Product</span>
+            <span className="text-[18px] font-medium">Product</span>
             <img
               src={arrowDark}
               alt="arrow "
@@ -62,7 +62,7 @@ const MobileBar = () => {
             className="flex items-center justify-center gap-2"
             onClick={companyMobileMenu}
           >
-            <span className="text-[18px] font-semibold">Company</span>
+            <span className="text-[18px] font-medium">Company</span>
             <img
               src={arrowDark}
               alt="arrow "
@@ -92,7 +92,7 @@ const MobileBar = () => {
             className="flex items-center justify-center gap-2"
             onClick={connectMobileMenu}
           >
-            <span className="text-[18px] font-semibold">Connect</span>
+            <span className="text-[18px] font-medium">Connect</span>
             <img
               src={arrowDark}
               alt="arrow "

@@ -12,10 +12,10 @@ const Header = () => {
   return (
     <div className="relative">
       <header className=" flex overflow-hidden items-center flex-col min-h-[37.5rem] relative z-50 rounded-bl-[6.5rem] bg">
-        <div className="absolute top-[-84rem] left-[-27.5rem] -z-10 ">
+        <div className="absolute top-[0rem] sm:top-[-84rem]  left-[-27.5rem] -z-10">
           <BgDesktop />
         </div>
-        <div className="absolute top-[-84rem] left-[-27.5rem] -z-10 ">
+        <div className="absolute top-[-15rem] left-[-21rem] -z-10 sm:hidden ">
           <BgMobile />
         </div>
 
