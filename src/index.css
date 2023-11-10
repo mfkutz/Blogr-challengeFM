@@ -85,12 +85,33 @@
         color: var(--Very-light-red-CTA-hover-background);
     }
 
-    @media (max-width: 640px){
-        .hide{
-            top: 0;
-        }
-    }
+   h3{
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--Very-dark-grayish-blue-body-copy);
+   }
 
+   .imgDesk{
+    width: 925px;
+   }
+   .imgDeskTwo{
+    display: none;
+   }
+
+   
+   @media (max-width:1188px){
+    .imgDesk{
+        max-width: 700px;
+    }
+   }
+   @media (max-width:1024px){
+       .imgDesk{
+           display: none;
+       }
+       .imgDeskTwo{
+           display: block;
+       }
+   }
   
 }
 
